@@ -5,7 +5,7 @@ import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 
 const ItemsData = ({ item }) => {
   return (
-    <div className="item-column" key={item.itemId}>
+    <div className="item-column">
       <Link to={`/item/${item.itemId}`} className="item">
         <figure className="item__img__wrapper">
           <img src={item.imageLink} alt="" className="item__img" />

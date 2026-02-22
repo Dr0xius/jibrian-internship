@@ -7,8 +7,19 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import CollectionsData from "./ui/CollectionsData";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Swiperjs = ({ data }) => {
+  AOS.init({
+    offset: 90,
+    delay: 0,
+    duration: 700,
+    easing: "ease",
+    once: false,
+    mirror: true,
+    anchorPlacement: "top-bottom",
+  });
   return (
     <Swiper
       modules={[Navigation, A11y]}
@@ -37,6 +48,8 @@ const Swiperjs = ({ data }) => {
           slidesPerView: 6,
         },
       }}
+      data-aos="fade-up"
+      data-aos-mirror="false"
     >
       {data.map((collection, index) => (
         <SwiperSlide key={index}>
