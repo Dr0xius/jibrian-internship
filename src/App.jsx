@@ -18,6 +18,8 @@ function App() {
     onboarding: [],
   });
 
+  const [loading, setLoading] = useState(true);
+
   async function fetchData() {
     try {
       const [onboarding] = await Promise.all([

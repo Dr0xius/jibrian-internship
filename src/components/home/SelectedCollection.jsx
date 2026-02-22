@@ -4,7 +4,6 @@ import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import Skeleton from "../ui/Skeleton";
-import { useFetch } from "../collection/useCollection";
 
 export default function SelectedCollection() {
   const { store, loading } = useContext(AppContext);
