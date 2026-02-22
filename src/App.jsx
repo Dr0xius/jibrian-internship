@@ -22,6 +22,8 @@ function App() {
   });
 
   const [loading, setLoading] = useState(true);
+  const [visible, setVisible] = useState(true);
+  const [visibleCount, setVisibleCount] = useState(12);
 
   async function fetchData() {
     try {
@@ -45,6 +47,15 @@ function App() {
     }
   }
 
+  function handleLoadMore(length) {
+    setVisibleCount((prevCount) => {
+      if (!prevCount || prevCount >= length - 6) {
+        setVisible(false);
+      }
+      return prevCount + 6;
+    });
+  }
+
   useEffect(() => {
     setLoading(true);
     const controller = new AbortController();
@@ -59,6 +70,12 @@ function App() {
       value={{
         store,
         loading,
+        setLoading,
+        handleLoadMore,
+        visible,
+        visibleCount,
+        setVisibleCount,
+        setVisible,
       }}
     >
       <Router>
