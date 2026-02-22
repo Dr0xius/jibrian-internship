@@ -4,7 +4,7 @@ import Skeleton from "./Skeleton";
 
 const CollectionsCardSkeleton = () => {
   return (
-    <div className="item-column" style={{ width: "100%" }}>
+    <div className="item-column">
       <div to={"/item"} className="item">
         <figure className="item__img__wrapper">
           <Skeleton width={"100%"} height={"100%"} />

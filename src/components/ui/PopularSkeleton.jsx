@@ -17,7 +17,6 @@ const PopularSkeleton = () => {
       slidesPerView={1}
       navigation
       loop={{ loop: true }}
-      onSwiper={(swiper) => console.log(swiper)}
       breakpoints={{
         480: {
           slidesPerView: 2,
