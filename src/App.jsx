@@ -17,20 +17,23 @@ function App() {
   const [store, setStore] = useState({
     onboarding: [],
     trendingNFT: [],
+    newCollections: [],
   });
 
   const [loading, setLoading] = useState(true);
 
   async function fetchData() {
     try {
-      const [onboarding, trending] = await Promise.all([
+      const [onboarding, trending, newColl] = await Promise.all([
         axios.get(`${baseUrl}/selectedCollection`),
         axios.get(`${baseUrl}/trendingNFTs`),
+        axios.get(`${baseUrl}/newCollections`),
       ]);
 
       setStore({
         onboarding: onboarding.data.data,
         trendingNFT: trending.data.data,
+        newCollections: newColl.data.data,
       });
     } catch (error) {
       console.error("Fetch failed", error);
