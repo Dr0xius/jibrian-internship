@@ -67,9 +67,7 @@ export default function CollectionItems() {
             </div>
             <div className="collection-items__body">
               {collection.items.slice(0, visibleCount).map((item) => (
-                <div className="item-column" key={item.itemId}>
-                  <ItemsData item={item} />
-                </div>
+                <ItemsData item={item} key={item.itemId} />
               ))}
             </div>
           </div>
