@@ -3,8 +3,11 @@ import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import Carousel from "../Carousel";
 import CarouselSkeleton from "../ui/CarouselSkeleton";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function PopularCollections() {
+  AOS.init();
   const { loading, store } = useContext(AppContext);
   return (
     <section id="popular-collections">
